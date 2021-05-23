@@ -1,6 +1,6 @@
 
 import {useEffect} from "react"
-import {useHistory} from "react-router-dom"
+import {useHistory,withRouter} from "react-router-dom"
 
 const Logout = (props)=>{
     const history = useHistory()
@@ -14,4 +14,4 @@ const Logout = (props)=>{
     return (<></>)
 }
 
-export default Logout
+export default withRouter(Logout)

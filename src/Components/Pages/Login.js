@@ -1,7 +1,7 @@
 import {useRef,useState,useEffect} from 'react'
 import "./Register.css"
 import backgroundImage from "../../assets/2.jpg"
-import {useHistory} from "react-router-dom"
+import {useHistory,withRouter} from "react-router-dom"
 const Login = (props)=>{
 
     const history  = useHistory()
@@ -110,4 +110,4 @@ const Login = (props)=>{
     );
 }
 
-export default Login
+export default withRouter(Login)

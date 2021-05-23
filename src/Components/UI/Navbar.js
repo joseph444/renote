@@ -1,18 +1,13 @@
-import {useState,useEffect} from 'react'
+import {useState,useLayoutEffect} from 'react'
 import {Link,useLocation} from 'react-router-dom'
 import MobileNav from './mobileNav'
 
 
 function Navbar(){
 
-    const [NavLinks,setNavLinks] = useState([
-        {path:'/',name:'Home'},
-        {path:'/about',name:'About'},
-        {path:'/login',name:'Login'},
-        {path:'/register',name:'Register'},
-    ])
+    const [NavLinks,setNavLinks] = useState([])
 
-    useEffect(()=>{
+    useLayoutEffect(()=>{
         const token = localStorage.getItem('idToken')
 
             var navLinks = NavLinks;
@@ -32,16 +27,20 @@ function Navbar(){
                         if(result.success){
                             localStorage.setItem('user',JSON.stringify(result.body))
                             console.log(result);
-                            navLinks[0] = {path:'/home',name:'Home'}
-                            navLinks.splice(2,2)
-                            //console.log(navLinks);
+                           
                             setNavLinks([
-                                ...navLinks,
+                                {path:'/home',name:'Home'},{path:'/about',name:'About'},
                                 {path:'/search',name:'Search'},{path:'/logout',name:'Logout'}
                             ])
                         }
                     }).catch(error=>{
-    
+                        setNavLinks([
+                            {path:'/',name:'Home'},
+                            {path:'/about',name:'About'},
+                            {path:'/login',name:'Login'},
+                            {path:'/register',name:'Register'},
+                        ])
+                        localStorage.removeItem('idToken')
                     })
             }else{
                 setNavLinks([
