@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=KoHo:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+
+
+.banner{
+  
+  
+    @apply flex flex-col-reverse sm:grid sm:grid-cols-2 bg-gray-100
+  }
+  
+  .banner-text{
+    font-family: 'Roboto', sans-serif !important;
+    @apply  text-5xl capitalize font-bold w-full px-8 py-10 sm:py-24
+  }
+  
+  .alter-banner-text{
+    font-family: 'Roboto', sans-serif;
+    @apply text-5xl capitalize font-bold text-indigo-400
+  }
+  .small-banner-text{
+    
+    @apply text-xl mt-5 capitalize font-bold text-gray-400 
+  }
+  .imaged-banner{
+    min-height: 50rem;
+    background-image: url('../../assets/pexels-lisa-1485548.jpg');
+    @apply bg-center bg-cover w-full h-full;
+  }
+  
+  .btn-banner{
+    @apply text-lg flex mt-5
+  }
+  
+  

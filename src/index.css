@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=KoHo:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 
 *{
   margin: 0;
@@ -14,17 +14,22 @@
 }
 
 .navbar{
-  @apply bg-blue-300 shadow-xl fixed w-full
+  @apply bg-gray-100 shadow-lg w-full
 }
 .navbar-container{
- @apply mx-auto container
+ @apply sm:mx-8 container
 }
 .navbar-wrapper{
   @apply sm:flex justify-around
 }
 
 .brand-name{
-  @apply text-black text-4xl font-extrabold uppercase py-3 pl-3
+  font-family: 'Roboto', sans-serif !important;
+  @apply text-indigo-700 text-4xl font-extrabold uppercase py-3 pl-3 text-justify w-full
+}
+
+.bold-font{
+  font-family: 'Roboto', sans-serif
 }
 
 .nav-toggle{
@@ -32,13 +37,13 @@
 }
 
 .navbar-nav{
-  @apply hidden sm:self-center text-xl border-t sm:border-none sm:flex justify-around flex-col md:flex-row 
+  @apply hidden sm:self-center text-sm border-t sm:border-none sm:flex justify-around flex-col sm:flex-row 
 }
 .nav{
-  @apply p-4 uppercase font-bold hover:bg-blue-500 hover:text-white rounded-md 
+  @apply p-4 uppercase font-bold hover:bg-gray-500 hover:text-white  
 }
 .nav.active{
-  @apply bg-blue-700
+  @apply scale-50 bg-gray-300
 }
 .mobileNav{
   @apply sm:hidden
@@ -48,8 +53,21 @@
 }
 
 .mobile-link{
-  @apply font-bold text-2xl uppercase p-3 hover:bg-blue-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium 
+  @apply font-bold text-2xl uppercase p-3 hover:bg-gray-200  block px-3 py-2 rounded-md text-base font-medium 
 }
 .mobile-link.active{
-  @apply bg-blue-700
+  @apply scale-75 bg-gray-300
+}
+
+.btn{
+  @apply font-bold py-3 px-4 rounded rounded-md outline-none
+}
+.btn-primary{
+  @apply bg-indigo-600 text-white hover:bg-indigo-700
+}
+.btn-white{
+  @apply bg-indigo-100 text-indigo-600 hover:bg-indigo-300
+}
+.btn-light{
+  @apply bg-white text-indigo-600 hover:bg-indigo-100 
 }

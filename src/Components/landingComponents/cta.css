@@ -1,0 +1,11 @@
+.cta-container{
+    height: 40rem;
+    @apply  w-full bg-indigo-600
+}
+.bold-cta-text{
+    font-family: 'Roboto', sans-serif;
+    @apply text-white text-5xl font-extrabold
+}
+.gray-cta-text{
+    @apply text-white text-2xl m-6 mx-auto 
+}

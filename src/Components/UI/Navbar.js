@@ -27,12 +27,12 @@ function Navbar(){
 
 
     return(
-        <>
+        
          <nav className="navbar">
             <div className="navbar-container">
                 <div className="navbar-wrapper">
                     <div className="brand-name">
-                        <Link to="/">Re-Note</Link>
+                        <Link to="/" className="bold-font">ReNote</Link>
                     </div>
                     <button className="nav-toggle" onClick={toggleMobileNav}>
                             <i className="material-icons text-4xl">{isOpen?"close":"menu"}</i>
@@ -51,7 +51,7 @@ function Navbar(){
             {isOpen && <MobileNav navlinks={NavLinks}/>}
          </nav>
     
-        </>
+        
     );
 
 }

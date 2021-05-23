@@ -1,0 +1,37 @@
+
+.feature-container{
+    @apply container p-8 pt-12 block sm:flex flex-row justify-between
+}
+
+.feature-head{
+    @apply sm:w-1/3 w-full pr-4 pt-12
+}
+.feature-list{
+    @apply sm:w-2/3 w-full  sm:grid grid-cols-2 gap-1 pl-4 pt-12
+}
+
+
+.highlighted-text{
+    font-family: 'Roboto',sans-serif;
+    @apply text-indigo-600 font-bold uppercase text-xl
+}
+.bold-header{
+    font-family: 'Roboto',sans-serif;
+    @apply text-5xl font-bold my-4
+}
+
+.gray-text{
+    @apply text-lg text-gray-400 font-bold
+}
+
+.feature-list-item{
+    @apply flex py-4
+}
+
+.feature-list-header{
+    font-family: 'Roboto',sans-serif;
+    @apply text-3xl uppercase font-bold
+}
+.feature-list-content{
+    @apply text-2xl text-gray-400
+}
