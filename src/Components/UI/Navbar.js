@@ -26,6 +26,7 @@ function Navbar(){
                     .then(result=>{
                         if(result.success){
                             localStorage.setItem('user',JSON.stringify(result.body))
+                            localStorage.setItem('isAuth',true)
                             console.log(result);
                            
                             setNavLinks([
@@ -41,8 +42,11 @@ function Navbar(){
                             {path:'/register',name:'Register'},
                         ])
                         localStorage.removeItem('idToken')
+                        localStorage.removeItem('isAuth')
                     })
             }else{
+                localStorage.removeItem('idToken')
+                localStorage.removeItem('isAuth')
                 setNavLinks([
                     {path:'/',name:'Home'},
                     {path:'/about',name:'About'},

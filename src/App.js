@@ -15,34 +15,7 @@ function App() {
   const [isAuthenticated,setIsAuthenticated] = useState(false)
 
     useEffect(()=>{
-        const token = localStorage.getItem('idToken')
-
-            
-            if(token){
-                var myHeaders = new Headers();
-                myHeaders.append('Authorization',`Bearer ${token}`)
-    
-                var requestOptions = {
-                    method:'GET',
-                    headers:myHeaders,
-                    redirect:'follow'
-                }
-    
-                fetch("https://apirenote.herokuapp.com/api/user/", requestOptions)
-                    .then(response=>response.json())
-                    .then(result=>{
-                        if(result.success){
-                            localStorage.setItem('user',JSON.stringify(result.body))
-                            setIsAuthenticated(true)
-                           
-                            
-                        }
-                    }).catch(error=>{
-                        setIsAuthenticated(false)
-                    })
-            }else{
-                setIsAuthenticated(false)
-            }
+        setIsAuthenticated(localStorage.getItem('isAuth') || false)
     });
 
 
