@@ -1,16 +1,57 @@
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import {Link,useLocation} from 'react-router-dom'
 import MobileNav from './mobileNav'
 
 
 function Navbar(){
 
-    const NavLinks = [
+    const [NavLinks,setNavLinks] = useState([
         {path:'/',name:'Home'},
         {path:'/about',name:'About'},
         {path:'/login',name:'Login'},
         {path:'/register',name:'Register'},
-    ];
+    ])
+
+    useEffect(()=>{
+        const token = localStorage.getItem('idToken')
+
+            var navLinks = NavLinks;
+            if(token){
+                var myHeaders = new Headers();
+                myHeaders.append('Authorization',`Bearer ${token}`)
+    
+                var requestOptions = {
+                    method:'GET',
+                    headers:myHeaders,
+                    redirect:'follow'
+                }
+    
+                fetch("https://apirenote.herokuapp.com/api/user/", requestOptions)
+                    .then(response=>response.json())
+                    .then(result=>{
+                        if(result.success){
+                            localStorage.setItem('user',JSON.stringify(result.body))
+                            console.log(result);
+                            navLinks[0] = {path:'/home',name:'Home'}
+                            navLinks.splice(2,2)
+                            //console.log(navLinks);
+                            setNavLinks([
+                                ...navLinks,
+                                {path:'/search',name:'Search'},{path:'/logout',name:'Logout'}
+                            ])
+                        }
+                    }).catch(error=>{
+    
+                    })
+            }else{
+                setNavLinks([
+                    {path:'/',name:'Home'},
+                    {path:'/about',name:'About'},
+                    {path:'/login',name:'Login'},
+                    {path:'/register',name:'Register'},
+                ])
+            }
+    },[])
 
     const location = useLocation()
     const [isOpen,setIsOpen] = useState(false);

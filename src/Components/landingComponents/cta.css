@@ -1,5 +1,7 @@
 .cta-container{
-    height: 40rem;
+    height: 35rem;
+    min-height: 30rem;
+    max-height: 40rem;
     @apply  w-full bg-indigo-600
 }
 .bold-cta-text{

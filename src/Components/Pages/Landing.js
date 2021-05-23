@@ -1,6 +1,7 @@
 import Banner from "../landingComponents/banner"
 import Cta from "../landingComponents/cta"
 import Features from "../landingComponents/features"
+import Footer from "../landingComponents/footer"
 
 const Landing = (props)=>{
     return (
@@ -8,6 +9,7 @@ const Landing = (props)=>{
         <Banner/>
         <Features/>
         <Cta/>
+        <Footer/>
         </>
     );
 }

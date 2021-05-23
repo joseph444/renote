@@ -1,0 +1,34 @@
+.base-container{
+    
+    @apply w-full flex justify-center h-full;
+}
+
+
+
+.form-display-container{
+
+    @apply w-full sm:w-1/3 h-full 
+}
+.image-display-container{
+    
+
+    @apply object-contain object-center bg-gradient-to-t from-gray-100 from-gray-800  sm:block hidden sm:w-2/3 h-full 
+}
+
+.bold-text{
+    font-family: 'Roboto',sans-serif;
+    @apply text-3xl lg:text-5xl font-bold text-center;
+}
+
+.form{
+    @apply grid grid-cols-1 gap-4 p-2;
+}
+.form-control{
+    @apply flex flex-col text-lg
+}
+.form-element{
+    @apply h-12 appearance-none rounded-md relative block w-full px-3 py-2  border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm
+}
+.extras{
+    @apply flex w-full 
+}
