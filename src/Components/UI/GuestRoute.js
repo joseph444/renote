@@ -14,7 +14,7 @@ function GuestRoute({
           return <Component  />;
         } else {
           return (
-            <Redirect to={{ pathname: "/", state: { from: props.location } }} />
+            <Redirect to={{ pathname: "/home", state: { from: props.location } }} />
           );
         }
       }}

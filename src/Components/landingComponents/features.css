@@ -1,13 +1,13 @@
 
 .feature-container{
-    @apply container p-8 pt-12 block sm:flex flex-row justify-between
+    @apply container p-8 pt-12 block lg:flex flex-row justify-between
 }
 
 .feature-head{
-    @apply sm:w-1/3 w-full pr-4 pt-12
+    @apply lg:w-1/3 w-full pr-4 pt-12
 }
 .feature-list{
-    @apply sm:w-2/3 w-full  sm:grid grid-cols-2 gap-1 pl-4 pt-12
+    @apply lg:w-2/3 w-full  lg:grid grid-cols-2 gap-1 pl-4 pt-12
 }
 
 
@@ -30,7 +30,8 @@
 
 .feature-list-header{
     font-family: 'Roboto',sans-serif;
-    @apply text-3xl uppercase font-bold
+    word-wrap: break-word;
+    @apply text-3xl uppercase font-bold 
 }
 .feature-list-content{
     @apply text-2xl text-gray-400

@@ -8,9 +8,18 @@ function Navbar(){
     const [NavLinks,setNavLinks] = useState([])
 
     useLayoutEffect(()=>{
-        const token = localStorage.getItem('idToken')
+        
+        const expiredIn = localStorage.getItem('expiredIn')
+        const now = new Date().getTime()
+        if(expiredIn && now>expiredIn){
+            localStorage.removeItem('idToken')
+            localStorage.removeItem('isAuth')
+            localStorage.removeItem('expiredIn')
+            localStorage.removeItem('user')
+        }
 
-            var navLinks = NavLinks;
+        const token = localStorage.getItem('idToken')
+            
             if(token){
                 var myHeaders = new Headers();
                 myHeaders.append('Authorization',`Bearer ${token}`)
@@ -35,6 +44,7 @@ function Navbar(){
                             ])
                         }
                     }).catch(error=>{
+                        console.log(error);
                         setNavLinks([
                             {path:'/',name:'Home'},
                             {path:'/about',name:'About'},

@@ -17,10 +17,10 @@
   @apply bg-gray-100 shadow-lg w-full
 }
 .navbar-container{
- @apply sm:mx-8 container
+ @apply lg:mx-8 container
 }
 .navbar-wrapper{
-  @apply sm:flex justify-around
+  @apply lg:flex justify-around
 }
 
 .brand-name{
@@ -33,11 +33,11 @@
 }
 
 .nav-toggle{
-  @apply sm:hidden absolute top-0 right-0 inline-flex items-center justify-center p-2 rounded-md 
+  @apply lg:hidden absolute top-0 right-0 inline-flex items-center justify-center p-2 rounded-md 
 }
 
 .navbar-nav{
-  @apply hidden sm:self-center text-sm border-t sm:border-none sm:flex justify-around flex-col sm:flex-row 
+  @apply hidden lg:self-center text-sm border-t lg:border-none lg:flex justify-around flex-col lg:flex-row 
 }
 .nav{
   @apply p-4 uppercase font-bold hover:bg-gray-500 hover:text-white  
@@ -46,7 +46,7 @@
   @apply scale-50 bg-gray-300
 }
 .mobileNav{
-  @apply sm:hidden
+  @apply lg:hidden
 }
 .mobileNavContainer{
   @apply px-4  pt-2 pb-3 space-y-1 grid grid-cols-1  
@@ -70,4 +70,17 @@
 }
 .btn-light{
   @apply bg-white text-indigo-600 hover:bg-indigo-100 
+}
+
+.form{
+  @apply grid grid-cols-1 gap-4 p-2;
+}
+.form-control{
+  @apply flex flex-col text-lg
+}
+.form-element{
+  @apply h-12 appearance-none rounded-md relative block w-full px-3 py-2  border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 lg:text-sm
+}
+.form-textarea{
+  @apply appearance-none rounded-md relative block w-full px-3 py-2  border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 lg:text-sm resize-none
 }

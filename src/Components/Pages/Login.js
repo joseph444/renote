@@ -32,14 +32,17 @@ const Login = (props)=>{
             body:raw,
             redirect:'follow'
         }
-
+        
         fetch("https://apirenote.herokuapp.com/api/auth/login",requestOptions)
             .then(response=>response.json())
             .then(result=>{
+                const expiresIn = new Date().getTime() + 1000*60*60
                 setLoading(false)
                 if(result.success){
                     const idToken = result.body.token
                     localStorage.setItem('idToken',idToken);
+                    localStorage.setItem('isAuth',true)
+                    localStorage.setItem('expiredIn',expiresIn)
                     history.replace('/home')
                     window.location.reload()
                     
