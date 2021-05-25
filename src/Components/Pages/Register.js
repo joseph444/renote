@@ -81,11 +81,11 @@ const Register = (props)=>{
             <div className="flex w-full">
                 <div className="form-display-container">
                     <div className="flex flex-col h-full justify-center">
-                        <div className="sm:px-12 px-2">
+                       {loading?<Loading/>: <div className="sm:px-12 px-2">
                             <div className="bold-text my-8">
                                     Create a new account
                             </div>
-                            {loading?<Loading/>:<form className="form sm:mx-5" onSubmit={formSubmission}>
+                            <form className="form sm:mx-5" onSubmit={formSubmission}>
                                 <div className="form-control">
                                     <label>First Name</label>
                                     <input type="text" ref={firstNameRef} name="firstname" className="form-element" disabled={loading} />
@@ -121,9 +121,10 @@ const Register = (props)=>{
                                 </div>
 
                             </form>
-}
+
 
                         </div>
+                        }
                     </div>
                 </div>
                 <div className="image-display-container">
