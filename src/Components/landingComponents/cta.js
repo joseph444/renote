@@ -1,6 +1,11 @@
+import {useHistory} from "react-router-dom"
 import './cta.css'
 const Cta = (props)=>{
-
+    const history = useHistory()
+   
+    function GotoSignUp(){
+        history.push('/register')
+    }
     return (
         <div className="cta-container">
             <div className="mx-auto container h-full flex justify-center">
@@ -17,7 +22,7 @@ const Cta = (props)=>{
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat et tortor non blandit. Nam vitae tortor vitae neque venenatis pulvinar. Donec facilisis aliquam velit.
                             </div>
                             <div className="mb-2">
-                                <button className="btn btn-light">Sign up</button>
+                                <button className="btn btn-light" onClick={GotoSignUp}>Sign up</button>
                             </div>
                         </div>
                     </div>

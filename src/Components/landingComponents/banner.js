@@ -1,5 +1,11 @@
+import {useHistory} from "react-router-dom"
 import './banner.css';
 const Banner = (props) =>{
+    const history = useHistory()
+    function GotoLogin(){
+        history.push('/login')
+    }
+    
     return (
         <div className="banner">
             <div className="relative h-full">
@@ -13,7 +19,7 @@ const Banner = (props) =>{
                             </div>
 
                             <div className="btn-banner">
-                                <button className="btn btn-primary ">Get Started</button>
+                                <button className="btn btn-primary " onClick={GotoLogin}>Get Started</button>
                                 <button className="btn btn-white mx-2">About Re-note</button>
 
                             </div>
