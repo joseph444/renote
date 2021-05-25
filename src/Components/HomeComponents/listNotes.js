@@ -21,6 +21,7 @@ function ListNotes(props){
             localStorage.removeItem('isAuth')
             localStorage.removeItem('expiredIn')
             localStorage.removeItem('user')
+            localStorage.removeItem('notes')
             alert("Session Expired!")
             history.replace('/')
             window.location.reload()
@@ -56,7 +57,7 @@ function ListNotes(props){
 
     return (
         <div className="note-list-groups" >
-            {props.notes.map((note,index)=><Note key={index} note={note} index={index} delete={deleteANote}/>)}
+            {props.notes.map((note,index)=><Note updateNotes={props.updateNotes} key={index} note={note} index={index} delete={deleteANote}/>)}
         </div>
     );
 }

@@ -2,6 +2,7 @@ import {useRef,useState,useEffect} from 'react'
 import "./Register.css"
 import backgroundImage from "../../assets/2.jpg"
 import {useHistory,withRouter} from "react-router-dom"
+import Loading from './Loading'
 const Register = (props)=>{
 
     const history  = useHistory()
@@ -84,7 +85,7 @@ const Register = (props)=>{
                             <div className="bold-text my-8">
                                     Create a new account
                             </div>
-                            <form className="form sm:mx-5" onSubmit={formSubmission}>
+                            {loading?<Loading/>:<form className="form sm:mx-5" onSubmit={formSubmission}>
                                 <div className="form-control">
                                     <label>First Name</label>
                                     <input type="text" ref={firstNameRef} name="firstname" className="form-element" disabled={loading} />
@@ -120,7 +121,7 @@ const Register = (props)=>{
                                 </div>
 
                             </form>
-
+}
 
                         </div>
                     </div>

@@ -27,6 +27,7 @@ function CreateNote(props){
             localStorage.removeItem('isAuth')
             localStorage.removeItem('expiredIn')
             localStorage.removeItem('user')
+            localStorage.removeItem('notes')
             alert("Session Expired!")
             history.replace('/')
             window.location.reload()
@@ -78,9 +79,10 @@ function CreateNote(props){
                 .then(data=>{
                     setLoading(false)
                     if(data.success){
+                        newNote.id = data.body.data.id
                         titleRef.current.value=""
                         bodyRef.current.value=""
-                        alert('Your Note is Added')
+                        //alert('Your Note is Added')
                         setToggleForm(false)
                         
                         props.createNote([newNote,...props.notes])

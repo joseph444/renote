@@ -6,7 +6,10 @@ const Logout = (props)=>{
     const history = useHistory()
     useEffect(()=>{
         localStorage.removeItem('idToken')
-        localStorage.removeItem('user')
+            localStorage.removeItem('isAuth')
+            localStorage.removeItem('expiredIn')
+            localStorage.removeItem('user')
+            localStorage.removeItem('notes')
         history.replace('/')
         window.location.reload()
     },[])

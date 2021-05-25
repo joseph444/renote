@@ -71,7 +71,7 @@ function Home(props){
         <>
             <CreateNote loading={!loading} notes={notes} createNote={setNotes}/>
             <div className="relative p-2">
-            {loading?<Loading/>:<ListNotes notes={notes} setNotes={setNotes}/>}
+            {loading?<Loading/>:<ListNotes notes={notes} setNotes={setNotes} updateNotes={setNotes}/>}
             </div>
             
         </>

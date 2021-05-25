@@ -9,7 +9,7 @@ import Logout from "./Components/Pages/Logout"
 import GuestRoute from "./Components/UI/GuestRoute"
 import ProtectedRoute from "./Components/UI/ProtectedRoutes"
 import Home from "./Components/Pages/Home"
-import Search from "./Components/Pages/Search"
+import Profile from "./Components/Pages/Profile"
 
 function App() {
 
@@ -31,7 +31,7 @@ function App() {
               <GuestRoute isAuthenticated={isAuthenticated} path='/login' component={Login} exact />
               <GuestRoute isAuthenticated={isAuthenticated} path='/register' component={Register} exact/>
               <ProtectedRoute isAuthenticated={isAuthenticated} path='/home' component={Home} exact/>
-              <ProtectedRoute isAuthenticated={isAuthenticated} path='/search' component={Search} exact/>
+              <ProtectedRoute isAuthenticated={isAuthenticated} path='/profile' component={Profile} exact/>
               <ProtectedRoute isAuthenticated={isAuthenticated} path='/logout' component={Logout} exact/>
           </Switch>
         </div>

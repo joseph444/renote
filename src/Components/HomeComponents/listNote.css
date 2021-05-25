@@ -1,6 +1,6 @@
 .note-list-groups{
    
-    @apply mx-auto p-2 grid grid-cols-2 lg:grid-cols-4 
+    @apply mx-auto p-2 grid grid-cols-1 lg:grid-cols-4 
 }
 
 

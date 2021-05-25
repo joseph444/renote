@@ -16,6 +16,7 @@ function Navbar(){
             localStorage.removeItem('isAuth')
             localStorage.removeItem('expiredIn')
             localStorage.removeItem('user')
+            localStorage.removeItem('notes')
         }
 
         const token = localStorage.getItem('idToken')
@@ -40,7 +41,7 @@ function Navbar(){
                            
                             setNavLinks([
                                 {path:'/home',name:'Home'},{path:'/about',name:'About'},
-                                {path:'/search',name:'Search'},{path:'/logout',name:'Logout'}
+                                {path:'/profile',name:'Profile'},{path:'/logout',name:'Logout'}
                             ])
                         }
                     }).catch(error=>{
@@ -53,10 +54,16 @@ function Navbar(){
                         ])
                         localStorage.removeItem('idToken')
                         localStorage.removeItem('isAuth')
+                        localStorage.removeItem('expiredIn')
+                        localStorage.removeItem('user')
+                        localStorage.removeItem('notes')
                     })
             }else{
                 localStorage.removeItem('idToken')
-                localStorage.removeItem('isAuth')
+            localStorage.removeItem('isAuth')
+            localStorage.removeItem('expiredIn')
+            localStorage.removeItem('user')
+            localStorage.removeItem('notes')
                 setNavLinks([
                     {path:'/',name:'Home'},
                     {path:'/about',name:'About'},

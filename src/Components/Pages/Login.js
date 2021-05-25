@@ -2,6 +2,7 @@ import {useRef,useState,useEffect} from 'react'
 import "./Register.css"
 import backgroundImage from "../../assets/2.jpg"
 import {useHistory,withRouter} from "react-router-dom"
+import Loading from './Loading'
 const Login = (props)=>{
 
     const history  = useHistory()
@@ -82,7 +83,7 @@ const Login = (props)=>{
                             <div className="bold-text my-8">
                                     Login to your account
                             </div>
-                            <form className="form sm:mx-5" onSubmit={formSubmission}>
+                            {loading?<Loading/>:<form className="form sm:mx-5" onSubmit={formSubmission}>
                                 
                                 <div className="form-control">
                                     <label>Email Adress</label>
@@ -99,7 +100,7 @@ const Login = (props)=>{
                                     <button disabled={loading} className="btn btn-primary w-full">Login</button>
                                 </div>
 
-                            </form>
+                            </form>}
 
 
                         </div>
